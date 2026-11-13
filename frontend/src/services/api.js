@@ -1,4 +1,5 @@
 import axios from 'axios';
+import Members from "./pages/Members";
 
 const api = axios.create({
   baseURL: 'http://localhost:4000/api',
@@ -14,5 +15,6 @@ api.interceptors.request.use((config) => {
   }
   return config;
 });
+
 
 export default api;

@@ -37,16 +37,7 @@ function App() {
         setActivities(activityResponse.data.activities);
 
       } catch (err) {
-        console.error("Dashboard error:", err);
-        
-        // Fake data fallback just in case your backend is down
-        setDashboard({
-          members: { total: 125 },
-          memberships: { active: 84 },
-          attendance: { today_check_ins: 42 },
-          seats: { available: 15, occupied: 35 },
-          finances: { today_revenue: 15000, today_expenses: 2000, today_net_income: 13000 }
-        });
+        console.error("Error fetching dashboard data:", err);
         
         setError("Could not connect to backend. Showing sample data.");
       } finally {
