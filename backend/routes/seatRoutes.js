@@ -10,7 +10,8 @@ const {
   getAllSeats,
   getSeatById,
   updateSeat,
-  updateSeatStatus
+  updateSeatStatus,
+  updateSeatPosition
 } = require("../controllers/seatController");
 
 router.use(protect);
@@ -18,6 +19,7 @@ router.use(protect);
 // Admin and Staff can view seats
 router.get("/", getAllSeats);
 router.get("/:id", getSeatById);
+router.patch("/:id/position", updateSeatPosition);
 
 // Only Admin can manage seats
 router.post("/", authorizeRoles("ADMIN"), createSeat);

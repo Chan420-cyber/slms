@@ -121,6 +121,8 @@ const getAllSeats = async (req, res) => {
         s.seat_number,
         s.seat_type,
         s.status,
+        s.pos_x,
+        s.pos_y,
         s.created_at
        FROM seats s
        JOIN zones z ON s.zone_id = z.zone_id
@@ -331,10 +333,37 @@ const updateSeatStatus = async (req, res) => {
   }
 };
 
+// 6. Update seat position (Drag and Drop)
+const updateSeatPosition = async (req, res) => {
+  try {
+    const { id } = req.params;
+    const { pos_x, pos_y } = req.body;
+
+    if (pos_x === undefined || pos_y === undefined) {
+      return res.status(400).json({ message: "pos_x and pos_y are required" });
+    }
+
+    const [result] = await pool.execute(
+      `UPDATE seats SET pos_x = ?, pos_y = ? WHERE seat_id = ?`,
+      [pos_x, pos_y, id]
+    );
+
+    if (result.affectedRows === 0) {
+      return res.status(404).json({ message: "Seat not found" });
+    }
+
+    res.status(200).json({ message: "Seat position updated" });
+  } catch (error) {
+    console.error("Update seat position error:", error);
+    res.status(500).json({ message: "Failed to update seat position" });
+  }
+};
+
 module.exports = {
   createSeat,
   getAllSeats,
   getSeatById,
   updateSeat,
-  updateSeatStatus
+  updateSeatStatus,
+  updateSeatPosition
 };
