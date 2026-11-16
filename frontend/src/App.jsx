@@ -20,6 +20,7 @@ import {
 
 import api from "./services/api";
 import Members from "./pages/Members";
+import Memberships from "./pages/Memberships";
 
 const navigation = [
   { name: "Dashboard", icon: LayoutDashboard },
@@ -475,6 +476,9 @@ function App() {
 
         {/* Members page */}
         {activePage === "Members" && <Members />}
+        
+        {/* Memberships page */}
+        {activePage === "Memberships" && <Memberships />}
 
         {/* Other modules */}
         {activePage !== "Dashboard" && activePage !== "Members" && (
