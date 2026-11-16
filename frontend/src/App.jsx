@@ -23,6 +23,7 @@ import Members from "./pages/Members";
 import Memberships from "./pages/Memberships";
 import SeatsAndZones from "./pages/SeatsAndZones";
 import Attendance from "./pages/Attendance";
+import Payments from "./pages/Payments";
 
 const navigation = [
   { name: "Dashboard", icon: LayoutDashboard },
@@ -487,6 +488,9 @@ function App() {
 
         {/* Attendance page */}
         {activePage === "Attendance" && <Attendance />}
+
+        {/* Payments page */}
+        {activePage === "Payments" && <Payments />}
 
         {/* Other modules */}
         {activePage !== "Dashboard" && activePage !== "Members" && (
