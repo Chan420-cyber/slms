@@ -58,4 +58,7 @@ app.use("/api/reports", require("./routes/reportRoutes"));
 //Dashboard routes
 app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
+//User routes
+app.use("/api/users", require("./routes/userRoute"));
+
 module.exports = app;
