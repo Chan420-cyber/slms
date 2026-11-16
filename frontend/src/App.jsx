@@ -21,6 +21,8 @@ import {
 import api from "./services/api";
 import Members from "./pages/Members";
 import Memberships from "./pages/Memberships";
+import SeatsAndZones from "./pages/SeatsAndZones";
+import Attendance from "./pages/Attendance";
 
 const navigation = [
   { name: "Dashboard", icon: LayoutDashboard },
@@ -476,9 +478,15 @@ function App() {
 
         {/* Members page */}
         {activePage === "Members" && <Members />}
-        
+
         {/* Memberships page */}
         {activePage === "Memberships" && <Memberships />}
+
+        {/* Seats & Zones page */}
+        {activePage === "Seats & Zones" && <SeatsAndZones/>}
+
+        {/* Attendance page */}
+        {activePage === "Attendance" && <Attendance />}
 
         {/* Other modules */}
         {activePage !== "Dashboard" && activePage !== "Members" && (
