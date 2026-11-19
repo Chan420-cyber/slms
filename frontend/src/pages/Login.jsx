@@ -133,6 +133,16 @@ export default function Login({ onLogin }) {
             </button>
           </form>
 
+          <div className="mb-8">
+            <p className="text-sm text-slate-500 mt-2">Email: admin@studylounge.com</p>
+            <p className="text-sm text-slate-500">Password: admin1234</p>
+          </div>
+
+          <div className="mb-8">
+            <h2 className="text-2xl font-bold text-slate-900">Welcome back</h2>
+            <p className="text-sm text-slate-500 mt-2">Please sign in to your admin account.</p>
+          </div>
+
           <p className="text-center text-xs text-slate-400 mt-10">
             StudySpace Management System &copy; {new Date().getFullYear()}
           </p>

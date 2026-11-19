@@ -1,4 +1,3 @@
-
 const express = require("express");
 const cors = require("cors");
 
@@ -59,6 +58,6 @@ app.use("/api/reports", require("./routes/reportRoutes"));
 app.use("/api/dashboard", require("./routes/dashboardRoutes"));
 
 //User routes
-app.use("/api/users", require("./routes/userRoute"));
+app.use("/api/users", require("./routes/userRoutes"));
 
 module.exports = app;

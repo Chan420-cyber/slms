@@ -13,8 +13,8 @@ import Memberships from "./pages/Memberships";
 import SeatsAndZones from "./pages/SeatsAndZones";
 import Attendance from "./pages/Attendance";
 import Payments from "./pages/Payments";
-// import Reports from "./pages/Reports";
-// import SettingsPage from "./pages/Settings";
+import Reports from "./pages/Reports";
+import SettingsPage from "./pages/Settings";
 
 const navigation = [
   { name: "Dashboard", icon: LayoutDashboard },
@@ -289,8 +289,8 @@ function App() {
         {activePage === "Seats & Zones" && <SeatsAndZones />}
         {activePage === "Attendance" && <Attendance />}
         {activePage === "Payments" && <Payments />}
-        {/* {activePage === "Reports" && <Reports />}
-        {activePage === "Settings" && <SettingsPage />} */}
+        {activePage === "Reports" && <Reports />}
+        {activePage === "Settings" && <SettingsPage />}
 
       </main>
     </div>
