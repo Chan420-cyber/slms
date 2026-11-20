@@ -2,8 +2,9 @@
 import axios from "axios";
 
 const api = axios.create({
-  // Keep port 4000 because this is the URL in your currently working setup.
-  baseURL: "http://localhost:4000/api",
+  baseURL: import.meta.env.PROD
+    ? "/api"
+    : "http://localhost:4000/api",
   headers: {
     "Content-Type": "application/json",
   },
